@@ -114,7 +114,7 @@ let myCity;
                 ii++;
                 ii == slideData.length ? ii=0 : ii;
           
-            },3000)
+            },4000)
        
     }
 
@@ -136,7 +136,7 @@ const myDate = new Date();
 }
 
 window.onload = () => {
-  
+
 
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(function(position) {
