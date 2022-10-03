@@ -66,7 +66,7 @@ let myCity
             slideTempData(data);
             const myDate = new Date();
             let getDay = myDate.getDate();
-            let getMonth = myDate.getMonth();
+            let getMonth = myDate.getMonth()+1;
             let getYear = myDate.getFullYear();
             let getWeekDay = myDate.getDay();
             let days = [" ","Pazartesi","Salı","Çarşamba","Perşembe","Cuma","Cumartesi","Pazar"]
