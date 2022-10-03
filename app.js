@@ -32,21 +32,26 @@ tempLi.forEach((hour, i) => {
 });
 
  // hava durumu
-let method;
-let lat;
-let lon;
+let method=0;
+let lat="";
+let lon="";
 let tempData;
-let myCity
+let myCity;
+
         function myWeather(){
 
             let api;
-  if(!method){
+  if(!method){   
+    if(getITem("myWeatherCity")){
+      myCity = getITem("myWeatherCity")
+        
+    }else{
+      myCity =  prompt("Lütfen şehir ismi giriniz") ;
+      setITem("myWeatherCity",myCity);
+    } 
         api = `https://api.openweathermap.org/data/2.5/weather?q=${myCity}&appid=09bc43c2b2766264ab1d31380431e0ec&units=metric&lang=tr` ;
     } else {
-        // let dizi = getITem("myLatLon")
-        // lat  = dizi[0];
-        // lon =  dizi[1];
-        api =  `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=09bc43c2b2766264ab1d31380431e0ec&units=metric&lang=tr` ;
+         api =  `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=09bc43c2b2766264ab1d31380431e0ec&units=metric&lang=tr` ;
          method =0 // sıfırsa inputtan isim girerek 1 ise lan lon girerek kullanmak için burada sıfırlayalım ki inputtan veri girişi kabul etsin
     }
    
@@ -56,7 +61,7 @@ let myCity
     .catch(err => console.log(err)) 
 
 
-        }
+        } myWeather()
 
     function getTempData(data){
        tempData = data;
@@ -110,13 +115,7 @@ let myCity
           
             },3000)
        
-        
-        
-       
-        
-
     }
-
 
 
 let cTemp = setInterval(cT, 1000);
@@ -129,8 +128,6 @@ const myDate = new Date();
   let getMinute = myDate.getMinutes();
   let getSecond = myDate.getSeconds();
 
-  // console.log(getMinute +"-"+getSecond+"-"+getHour);
-  // temp.style.transform = `rotate(${say}deg)`;
   houR.style.transform = `rotate(-${+getHour * 30}deg)`;
   minute.style.transform = `rotate(-${+getMinute * 6}deg)`;
   second.style.transform = `rotate(-${+getSecond * 6}deg)`;
@@ -143,17 +140,9 @@ window.onload = () => {
       navigator.geolocation.getCurrentPosition(function(position) {
         lat = parseFloat(Math.round(position.coords.latitude * 100) / 100).toFixed(2);
          lon = parseFloat(Math.round(position.coords.longitude * 100) / 100).toFixed(2);
-        method = 1;  // sıfırsa inputtan isim girerek 1 ise lan lon girerek kullanmak için
+         method = 1;  // sıfırsa inputtan isim girerek 1 ise lan lon girerek kullanmak için
         myWeather();
-            // if(lat && lon){
-            //     if(getITem("myWeatherCity")){
-            //          myCity = getITem("myWeatherCity")
-            //     } else{
-            //         setITem("myWeatherCity",[])
-            //         setITem("myLatLon",[lat,lon])
-
-            //     }
-            // }
       })
-    } 
+  
+    }
   }
