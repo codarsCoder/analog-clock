@@ -43,9 +43,9 @@ let myCity
   if(!method){
         api = `https://api.openweathermap.org/data/2.5/weather?q=${myCity}&appid=09bc43c2b2766264ab1d31380431e0ec&units=metric&lang=tr` ;
     } else {
-        let dizi = getITem("myLatLon")
-        lat  = dizi[0];
-        lon =  dizi[1];
+        // let dizi = getITem("myLatLon")
+        // lat  = dizi[0];
+        // lon =  dizi[1];
         api =  `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=09bc43c2b2766264ab1d31380431e0ec&units=metric&lang=tr` ;
          method =0 // sıfırsa inputtan isim girerek 1 ise lan lon girerek kullanmak için burada sıfırlayalım ki inputtan veri girişi kabul etsin
     }
