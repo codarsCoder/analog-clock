@@ -60,7 +60,7 @@ let myCity
 
     function getTempData(data){
        tempData = data;
-
+        console.log(tempData,"temp");
         // getId("weatherImgId").innerHTML =`<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/${tempData.weather[0].icon}.svg" alt=""></img>` 
         getId("weatherImgId").innerHTML =`<img src="./icons/${data.weather[0].icon}.png" alt=""></img>` 
             slideTempData(data);
@@ -145,15 +145,15 @@ window.onload = () => {
          lon = parseFloat(Math.round(position.coords.longitude * 100) / 100).toFixed(2);
         method = 1;  // sıfırsa inputtan isim girerek 1 ise lan lon girerek kullanmak için
         myWeather();
-            if(lat && lon){
-                if(getITem("myWeatherCity")){
-                     myCity = getITem("myWeatherCity")
-                } else{
-                    setITem("myWeatherCity",[])
-                    setITem("myLatLon",[lat,lon])
+            // if(lat && lon){
+            //     if(getITem("myWeatherCity")){
+            //          myCity = getITem("myWeatherCity")
+            //     } else{
+            //         setITem("myWeatherCity",[])
+            //         setITem("myLatLon",[lat,lon])
 
-                }
-            }
+            //     }
+            // }
       })
     } 
   }
