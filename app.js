@@ -136,6 +136,7 @@ const myDate = new Date();
 }
 
 window.onload = () => {
+  
 
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(function(position) {
