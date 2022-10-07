@@ -36,6 +36,8 @@ body{
     right: 0;
     margin: auto;
     border-radius: 50%;
+    border: 3px solid blue ;
+    z-index: 99999999999999999999;
     
 }
 
