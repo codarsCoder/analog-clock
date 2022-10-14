@@ -75,7 +75,7 @@ let myCity;
             let getMonth = myDate.getMonth()+1;
             let getYear = myDate.getFullYear();
             let getWeekDay = myDate.getDay();
-            let days = [" ","Pazartesi","Salı","Çarşamba","Perşembe","Cuma","Cumartesi","Pazar"]
+            let days = [" ","Monday","Tuesday ","Wednesday ","Thursday ","Friday ","Saturday ","Sunday "]
             getDay < 10 ? getDay = "0"+getDay : getDay;
             getMonth < 10 ? getMonth = "0"+getMonth : getMonth;
             getYear < 10 ? getYear = "0"+getYear : getYear;
