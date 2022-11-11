@@ -49,10 +49,10 @@ let myCity;
       myCity =  prompt("Lütfen şehir ismi giriniz") ;
       setITem("myWeatherCity",myCity);
     } 
-        api = `https://api.openweathermap.org/data/2.5/weather?q=${myCity}&appid=09bc43c2b2766264ab1d31380431e0ec&units=metric&lang=tr` ;
+        api = `https://api.openweathermap.org/data/2.5/weather?q=${myCity}&appid=71e5da9a71b82d31891654bb18a4b696&units=metric&lang=tr` ;
     } else {
           !(lat && lon) ? (method = 0 ,  myWeather()) : "";  
-         api =  `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=09bc43c2b2766264ab1d31380431e0ec&units=metric&lang=tr` ;
+         api =  `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=71e5da9a71b82d31891654bb18a4b696&units=metric&lang=tr` ;
          method =0 // sıfırsa inputtan isim girerek 1 ise lan lon girerek kullanmak için burada sıfırlayalım ki inputtan veri girişi kabul etsin
     }
    
